@@ -23,3 +23,10 @@ menu_item.forEach((item) => {
 		mobile_menu.classList.toggle('active');
 	});
 });
+const cards = document.querySelectorAll('.carousel .card');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('show-link');
+  });
+});
