@@ -766,3 +766,32 @@ p {
 .card.show-link .hidden-link {
   opacity: 1;
 }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
