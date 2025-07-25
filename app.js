@@ -30,3 +30,20 @@ cards.forEach(card => {
     card.classList.toggle('show-link');
   });
 });
+const leftBtn = document.querySelector('.arrow.left');
+const rightBtn = document.querySelector('.arrow.right');
+const carousel = document.querySelector('.carousel');
+
+leftBtn.addEventListener('click', () => {
+  carousel.scrollBy({
+    left: -220, // ajuste para tamanho do card + gap
+    behavior: 'smooth'
+  });
+});
+
+rightBtn.addEventListener('click', () => {
+  carousel.scrollBy({
+    left: 220,
+    behavior: 'smooth'
+  });
+});
