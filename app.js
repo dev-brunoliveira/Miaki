@@ -30,20 +30,20 @@ cards.forEach(card => {
     card.classList.toggle('show-link');
   });
 });
-const leftBtn = document.querySelector('.arrow.left');
-const rightBtn = document.querySelector('.arrow.right');
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
 const carousel = document.querySelector('.carousel');
+const cardWidth = 220; // Largura + margem (ajustar se necessário)
 
-leftBtn.addEventListener('click', () => {
-  carousel.scrollBy({
-    left: -220, // ajuste para tamanho do card + gap
-    behavior: 'smooth'
-  });
+leftArrow.addEventListener('click', () => {
+  if (carousel.scrollLeft > 0) {
+    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  }
 });
 
-rightBtn.addEventListener('click', () => {
-  carousel.scrollBy({
-    left: 220,
-    behavior: 'smooth'
-  });
+rightArrow.addEventListener('click', () => {
+  const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+  if (carousel.scrollLeft < maxScrollLeft) {
+    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  }
 });
